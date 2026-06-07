@@ -4,11 +4,11 @@ import {
   HiOutlineHome,
   HiOutlineFire,
   HiOutlineShoppingBag,
-  HiOutlineMusicalNote,
+  HiOutlineMusicNote,
   HiOutlineFilm,
   HiOutlineDesktopComputer,
   HiOutlineNewspaper,
-  HiOutlinePuzzle,
+  HiOutlineCollection,
   HiOutlineUser,
   HiOutlineClock,
   HiOutlineThumbUp,
@@ -46,7 +46,7 @@ const Sidebar = ({ isOpen }) => {
           <SidebarLink icon={HiOutlineHome} label="Home" to="/" />
           <SidebarLink icon={HiOutlineFire} label="Trending" to="/?category=Trending" />
           <SidebarLink icon={HiOutlineShoppingBag} label="Shopping" to="#" />
-          <SidebarLink icon={HiOutlineMusicalNote} label="Music" to="/?category=Music" />
+          <SidebarLink icon={HiOutlineMusicNote} label="Music" to="/?category=Music" />
           <SidebarLink icon={HiOutlineFilm} label="Movies" to="#" />
           <SidebarLink icon={HiOutlineDesktopComputer} label="Gaming" to="/?category=Gaming" />
           <SidebarLink icon={HiOutlineNewspaper} label="News" to="#" />
@@ -84,8 +84,8 @@ const Sidebar = ({ isOpen }) => {
 
           {/* Explore */}
           <p className="text-sm font-semibold px-3 py-2">Explore</p>
-          <SidebarLink icon={HiOutlinePuzzle} label="Gaming" to="/?category=Gaming" />
-          <SidebarLink icon={HiOutlineMusicalNote} label="Music" to="/?category=Music" />
+          <SidebarLink icon={HiOutlineCollection} label="Gaming" to="/?category=Gaming" />
+          <SidebarLink icon={HiOutlineMusicNote} label="Music" to="/?category=Music" />
           <SidebarLink icon={HiOutlineNewspaper} label="News" to="#" />
         </div>
       </aside>
