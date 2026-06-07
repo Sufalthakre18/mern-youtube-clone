@@ -58,7 +58,6 @@ const Sidebar = ({ isOpen, onClose }) => {
           left-0
           h-[calc(100vh-56px)]
           bg-white
-          border-r
           overflow-y-auto
           z-40
           transition-all
