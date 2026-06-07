@@ -32,12 +32,24 @@ const Header = ({ onToggleSidebar, onSearch }) => {
       {/* Left: Hamburger + Logo */}
       <div className="flex items-center gap-4 min-w-[180px]">
         <button
-          onClick={onToggleSidebar}
-          className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-          aria-label="Toggle Sidebar"
-        >
-          <HiOutlineMenu className="w-6 h-6" />
-        </button>
+  onClick={onToggleSidebar}
+  className="p-2 rounded-full hover:bg-gray-100"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-6 h-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 6h16M4 12h16M4 18h16"
+    />
+  </svg>
+</button>
         <Link to="/" className="flex items-center gap-1 select-none">
           <svg viewBox="0 0 90 20" className="h-5 w-auto" aria-label="YouTube">
             <g>

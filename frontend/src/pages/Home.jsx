@@ -52,7 +52,10 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} onSearch={handleSearch} />
-      <Sidebar isOpen={sidebarOpen} />
+      <Sidebar
+  isOpen={sidebarOpen}
+  onClose={() => setSidebarOpen(false)}
+/>
 
       {/* Main Content - shifts right when sidebar is open on desktop */}
       <main
