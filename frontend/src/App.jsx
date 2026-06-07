@@ -1,10 +1,10 @@
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
 
-function App() {
+const App = () => {
   return (
-    <>
-    <h1 className="bg-fuchsia-500 w-full p-5 text-3xl">hello world</h1>
-    </>
-  )
-}
+    <Header/>
+  );
+};
 
-export default App
+export default App;
