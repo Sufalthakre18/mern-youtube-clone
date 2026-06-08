@@ -2,6 +2,43 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axios.js';
 
+
+const Field = ({
+  name,
+  label,
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+  error,
+}) => (
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      {label}
+    </label>
+
+    <input
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      className={`w-full border rounded-lg px-3 py-2.5 text-sm
+        focus:outline-none focus:ring-2 focus:ring-blue-500
+        ${error
+          ? 'border-red-400'
+          : 'border-gray-300'
+        }`}
+    />
+
+    {error && (
+      <p className="text-xs text-red-500 mt-1">
+        {error}
+      </p>
+    )}
+  </div>
+);
+
 const Register = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ username: '', email: '', password: '', confirmPassword: '' });
@@ -51,22 +88,6 @@ const Register = () => {
     }
   };
 
-  const Field = ({ name, label, type = 'text', placeholder }) => (
-    <div>
-      <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
-      <input
-        type={type}
-        name={name}
-        value={form[name]}
-        onChange={handleChange}
-        placeholder={placeholder}
-        className={`w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-          errors[name] ? 'border-red-400' : 'border-gray-300'
-        }`}
-      />
-      {errors[name] && <p className="text-xs text-red-500 mt-1">{errors[name]}</p>}
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
@@ -88,11 +109,44 @@ const Register = () => {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <Field name="username" label="Username" placeholder="Choose a username" />
-          <Field name="email" label="Email" type="email" placeholder="Enter your email" />
-          <Field name="password" label="Password" type="password" placeholder="At least 6 characters" />
-          <Field name="confirmPassword" label="Confirm Password" type="password" placeholder="Repeat password" />
+          <Field
+            name="username"
+            label="Username"
+            placeholder="Choose a username"
+            value={form.username}
+            onChange={handleChange}
+            error={errors.username}
+          />
 
+          <Field
+            name="email"
+            label="Email"
+            type="email"
+            placeholder="Enter your email"
+            value={form.email}
+            onChange={handleChange}
+            error={errors.email}
+          />
+
+          <Field
+            name="password"
+            label="Password"
+            type="password"
+            placeholder="At least 6 characters"
+            value={form.password}
+            onChange={handleChange}
+            error={errors.password}
+          />
+
+          <Field
+            name="confirmPassword"
+            label="Confirm Password"
+            type="password"
+            placeholder="Repeat password"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            error={errors.confirmPassword}
+          />
           <div className="flex justify-between items-center pt-2">
             <Link to="/login" className="text-sm text-blue-600 hover:underline">
               Sign in instead
