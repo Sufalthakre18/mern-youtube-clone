@@ -7,6 +7,12 @@ A full-stack YouTube clone built with the **MERN Stack** (MongoDB, Express.js, R
 
 ## 🌐 Live Demo
 
+### Frontend
+🔗 https://mern-youtube-clone-three.vercel.app/
+
+### Backend API
+🔗 https://mern-youtube-clone-ncia.onrender.com/
+
 > 🎬 [Watch Demo Video](https://drive.google.com/file/d/1YRZTu1C_0t4qlkFZbYGx2bR7Szyv41w2/view?usp=sharing) 
 > 
 > 📁 [GitHub Repository](https://github.com/Sufalthakre18/mern-youtube-clone) 
